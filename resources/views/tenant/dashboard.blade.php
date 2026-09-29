@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard - Kostara</title>
+    <title>Dashboard Tenant - Kostara</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen bg-gray-100 p-6">
     <div class="max-w-xl mx-auto bg-white rounded-lg shadow p-6">
-        <h1 class="text-xl font-bold mb-2">Dashboard</h1>
+        <h1 class="text-xl font-bold mb-2">Dashboard Tenant</h1>
         <p>Halo, <strong>{{ auth()->user()->name }}</strong></p>
         <p class="text-gray-500 mb-4">Role: {{ auth()->user()->role }}</p>
 

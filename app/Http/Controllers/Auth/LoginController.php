@@ -25,7 +25,11 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('dashboard'));
+            $redirectRoute = Auth::user()->isOwner()
+                ? 'owner.dashboard'
+                : 'tenant.dashboard';
+
+            return redirect()->intended(route($redirectRoute));
         }
 
         return back()
